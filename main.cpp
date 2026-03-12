@@ -13,22 +13,21 @@ int main(int argc, char** argv) {
 
 
 	
-	round = 0;
+	round = 1;
 
 	srand(time(0));
 
 
     a = rand() % 9 + 1;
-	b = rand() % 9 + 1;
-	c = rand() % 9 + 1;
-    d = rand() % 9 + 1;
-	e = rand() % 9 + 1;
+	b = rand() % 10;
+	c = rand() % 10;
+    d = rand() % 10;
+	e = rand() % 10;
 
-	
 	
 
 	cout<<" ================================="<<endl;
-	cout<<"   Welcome to the Password Game! "<<endl;
+	cout<<"   Bem-vindo ao Password Game! "<<endl;
 	cout<<" ================================="<<endl;
 	
 	
@@ -37,7 +36,9 @@ int main(int argc, char** argv) {
 	
 	
 	
-	while (round<=15){
+	while (round<=20){
+		cout<<"\n\n = Rodada "<<round<<" ="<<endl;
+		
 		
 		lnw = 0;
 		nw = 0;
@@ -46,12 +47,12 @@ int main(int argc, char** argv) {
 		
 		do{
 			
-		cout<<" - Tente um numero: ";
+		cout<<"\n - Tente um numero: ";
 		cin>>n;
 			
 			
 			
-		}while( !(n>10000 and n<99999   ) );
+		}while( !(n>10000 and n<=99999   ) );
 		
 		
 		
@@ -68,15 +69,15 @@ int main(int argc, char** argv) {
 		
 		
 		
-	if ( x1 == a or x1 == b or x1 == c or x1 == d or x1 == e){ nw++; }
+	if ( x1 == a or x1 == b or x1 == c or x1 == d or x1 == e ){ nw++; }
 	
-	if ( x2 != x1 and x2 == a or x2 == b or x2 == c or x2 == d or x2 == e){ nw++; }
+	if ( x2 != x1 and (x2 == a or x2 == b or x2 == c or x2 == d or x2 == e )){ nw++; }
 	
-	if ( x3 != x2 and x3 != x1 and x3 == a or x3 == b or x3 == c or x3 == d or x3 == e){ nw++; }
+	if ( x3 != x2 and x3 != x1 and (x3 == a or x3 == b or x3 == c or x3 == d or x3 == e )){ nw++; }
 	
-	if ( x4 != x3 and x4 != x2 and x4 != x1 and x4 == a or x4 == b or x4 == c or x4 == d or x4 == e ){ nw++; }
+	if ( x4 != x3 and x4 != x2 and x4 != x1 and (x4 == a or x4 == b or x4 == c or x4 == d or x4 == e )){ nw++; }
 	
-	if ( x5 != x4 and x5 != x3 and x5 != x2 and x5 != x1 and x5 == a or x5 == b or x5 == c or x5 == d or x5 == e){ nw++; }
+	if ( x5 != x4 and x5 != x3 and x5 != x2 and x5 != x1 and (x5 == a or x5 == b or x5 == c or x5 == d or x5 == e )){ nw++; }
 	
 	
 	if ( x1 == a ){ lnw++; }
@@ -84,29 +85,38 @@ int main(int argc, char** argv) {
 	if ( x3 == c ){ lnw++; }	
 	if ( x4 == d ){	lnw++; }	
 	if ( x5 == e ){	lnw++; } 	
-		
-	cout<<" - Numeros corretos: "<<nw<<endl;
-	cout<<" - Numeros nos lugares corretos: "<<lnw<<endl;
-	cout<<"\n - - - - - - - - - - - - - - - - - - - - - - - - - - - - \n";
 	
+	
+	
+	
+	
+	
+		
+	if (x1==a and x2==b and x3==c and x4==d and x5==e  ){
+		cout<<"\n VOCE ACERTOU!"<<endl;
+		cout<<"\n O numero correto era: "<<n<<endl;
+		
+		
+		break;
+	}else{		
+
+	cout<<"\n - - - - - - - - - - - - - - - - - - - - - - - - - - - - ";
+	cout<<"\n - Numeros corretos: "<<nw<<endl;
+	cout<<"\n - Numeros nos lugares corretos: "<<lnw<<endl;
+	cout<<" - - - - - - - - - - - - - - - - - - - - - - - - - - - - \n";
+	}	
+	
+		
 
 
-
+	
 
 
 
 }
 
-cout<<a;
-
-cout<<b;
-	
-cout<<c;
-	
-cout<<d;
-	
-cout<<e;
-	
+cout<<"\n\n\n Voce perdeu!"<<endl;
+cout<<"\n O numero correto era: "<<a<<b<<c<<d<<e<<endl;
 	
 	
 	
