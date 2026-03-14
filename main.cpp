@@ -52,7 +52,7 @@ int main(int argc, char** argv) {
 			
 			
 			
-		}while( !(n>10000 and n<=99999   ) );
+		}while( !(n>=10000 and n<=99999   ) );
 		
 		
 		
@@ -96,8 +96,7 @@ int main(int argc, char** argv) {
 		cout<<"\n VOCE ACERTOU!"<<endl;
 		cout<<"\n O numero correto era: "<<n<<endl;
 		
-		
-		break;
+		return 0;
 	}else{		
 
 	cout<<"\n - - - - - - - - - - - - - - - - - - - - - - - - - - - - ";
