@@ -47,7 +47,7 @@ int main(int argc, char** argv) {
 		
 		do{
 			
-		cout<<"\n - Tente um numero: ";
+		cout<<"\n - Tente um numero (5 digitos): ";
 		cin>>n;
 			
 			
@@ -100,8 +100,8 @@ int main(int argc, char** argv) {
 	}else{		
 
 	cout<<"\n - - - - - - - - - - - - - - - - - - - - - - - - - - - - ";
-	cout<<"\n - Numeros corretos: "<<nw<<endl;
-	cout<<"\n - Numeros nos lugares corretos: "<<lnw<<endl;
+	cout<<"\n | Numeros corretos: "<<nw<<endl;
+	cout<<"\n | Numeros nos lugares corretos: "<<lnw<<endl;
 	cout<<" - - - - - - - - - - - - - - - - - - - - - - - - - - - - \n";
 	}	
 	
