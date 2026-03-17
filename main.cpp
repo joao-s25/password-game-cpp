@@ -50,9 +50,12 @@ int main(int argc, char** argv) {
 		cout<<"\n - Tente um numero (5 digitos): ";
 		cin>>n;
 			
+		if (cin.fail()){
+		cout<<"\n voce nao esta jogando corretamente...";
+		return 0;
+		}
 			
-			
-		}while( !(n>=10000 and n<=99999   ) );
+		}while( !(n>=10000 and n<=99999) );
 		
 		
 		
