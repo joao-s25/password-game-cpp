@@ -12,6 +12,44 @@ int main(int argc, char** argv) {
 	int x1,x2,x3,x4,x5; /* numeros isolados de n */
 
 
+
+
+
+	string ptl[9] = {"Bem-vindo ao Jogo da Senha", "\n\n = Rodada",
+	 
+	                "\n - Tente um numero (5 digitos)", "\n Voce nao esta jogando corretamente...", 
+	
+					"\n VOCE ACERTOU!", "\n\n\n Voce perdeu...",
+		
+					"\n O numero correto era: ", "\n | Numeros corretos: ",
+		
+					"\n | Numeros nos lugares corretos: "};
+	
+	
+	
+	
+	string enl[9] = {"Welcome to the Password Game", "\n\n = Round", 
+	    
+		            "\n - Try a number (5 digits)", "\n You shouldn't play this way...", 
+		
+					"\n YOU GUESSED IT RIGHT", "\n\n\n You lost...",
+		
+					"\n The correct number was: ", "\n | Correct numbers: ",
+		
+					"\n | Numbers at the right places: "};
+
+
+
+
+
+
+	//idioma selecionado
+	string sl[9] = {};
+
+
+
+
+
 	
 	round = 1;
 
