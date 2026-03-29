@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <vector>
+#include <string>
 
 using namespace std;
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
@@ -10,46 +12,41 @@ int main(int argc, char** argv) {
 	int a,b,c,d,e, round /* rodada */, n /* numero enviado */ ;
 	int nw, lnw; /* acertos de numeros e locais */
 	int x1,x2,x3,x4,x5; /* numeros isolados de n */
-
-
-
-
-
-	string ptl[9] = {"Bem-vindo ao Jogo da Senha", "\n\n = Rodada",
-	 
-	                "\n - Tente um numero (5 digitos)", "\n Voce nao esta jogando corretamente...", 
-	
-					"\n VOCE ACERTOU!", "\n\n\n Voce perdeu...",
-		
-					"\n O numero correto era: ", "\n | Numeros corretos: ",
-		
-					"\n | Numeros nos lugares corretos: "};
+	int i; //contador
 	
 	
-	
-	
-	string enl[9] = {"Welcome to the Password Game", "\n\n = Round", 
-	    
-		            "\n - Try a number (5 digits)", "\n You shouldn't play this way...", 
-		
-					"\n YOU GUESSED IT RIGHT", "\n\n\n You lost...",
-		
-					"\n The correct number was: ", "\n | Correct numbers: ",
-		
-					"\n | Numbers at the right places: "};
+	string lg; //verificação de idioma inicial
 
+	
+	vector<string> ptl;
+	vector<string> enl;
+	
+	ptl.push_back("   Bem-vindo ao Jogo da Senha");
+	ptl.push_back("\n\n = Rodada ");
+	ptl.push_back("\n - Tente um numero (5 digitos) ");
+	ptl.push_back("\n Voce nao esta jogando corretamente...");
+	ptl.push_back("\n VOCE ACERTOU!");
+	ptl.push_back("\n\n\n Voce perdeu...");
+	ptl.push_back("\n O numero correto era: ");
+	ptl.push_back("\n | Numeros corretos: ");
+	ptl.push_back("\n | Numeros nos lugares corretos: ");
+	
+	enl.push_back("   Welcome to the Password Game");
+	enl.push_back("\n\n = Round ");
+	enl.push_back("\n - Try a number (5 digits) ");
+	enl.push_back("\n You shouldn't play this way...");
+	enl.push_back("\n YOU GUESSED IT RIGHT");
+	enl.push_back("\n\n\n You lost...");
+	enl.push_back("\n The correct number was: ");
+	enl.push_back("\n | Correct numbers: ");
+	enl.push_back("\n | Numbers at the right places: ");
 
 
 
 
 
 	//idioma selecionado
-	string sl[9] = {};
-
-
-
-
-
+	vector<string> sl;
 	
 	round = 1;
 
@@ -63,19 +60,46 @@ int main(int argc, char** argv) {
 	e = rand() % 10;
 
 	
+	cout<<"Please, enter a language: "<<endl;
+	cout<<"English (enter 'en') Portuguese (enter 'pt') "<<endl;
+		
+	do{ cin>>lg;}while(!(lg=="pt" or lg=="en"));
+	
+	// Passe de idioma
+	if (lg == "pt"){
+		
+		for(i=0 ; i<9 ; i++){
+		    sl.push_back(ptl[i]);
+	
+			}
+		
+		
+	}else if (lg == "en"){
+		
+		for(i=0 ; i<9 ; i++){
+		   sl.push_back(enl[i]);
+		}
+	}
 
-	cout<<" ================================="<<endl;
-	cout<<"   Bem-vindo ao Password Game! "<<endl;
-	cout<<" ================================="<<endl;
 	
 	
+	
+	
+	
+	
+	
+	
+	cout<<"\n\n\n"<<endl;
+	cout<<" ================================="<<endl;
+	cout<<sl[0]<<endl;
+	cout<<" ================================="<<endl;
 	
 	
 	
 	
 	
 	while (round<=20){
-		cout<<"\n\n = Rodada "<<round<<" ="<<endl;
+		cout<<sl[1]<<round<<" ="<<endl;
 		
 		
 		lnw = 0;
@@ -84,14 +108,18 @@ int main(int argc, char** argv) {
 	
 		
 		do{
+				
+			cout<<sl[2];
+			cin>>n;
+				
 			
-		cout<<"\n - Tente um numero (5 digitos): ";
-		cin>>n;
-			
+				
 		if (cin.fail()){
-		cout<<"\n voce nao esta jogando corretamente...";
-		return 0;
+			cout<<sl[3];
+			return 0;
 		}
+			
+			
 			
 		}while( !(n>=10000 and n<=99999) );
 		
@@ -134,15 +162,15 @@ int main(int argc, char** argv) {
 	
 		
 	if (x1==a and x2==b and x3==c and x4==d and x5==e  ){
-		cout<<"\n VOCE ACERTOU!"<<endl;
-		cout<<"\n O numero correto era: "<<n<<endl;
+		cout<<sl[4]<<endl;
+		cout<<sl[6]<<n<<endl;
 		
 		return 0;
 	}else{		
 
 	cout<<"\n - - - - - - - - - - - - - - - - - - - - - - - - - - - - ";
-	cout<<"\n | Numeros corretos: "<<nw<<endl;
-	cout<<"\n | Numeros nos lugares corretos: "<<lnw<<endl;
+	cout<<sl[7]<<nw<<endl;
+	cout<<sl[8]<<lnw<<endl;
 	cout<<" - - - - - - - - - - - - - - - - - - - - - - - - - - - - \n";
 	}	
 	
@@ -155,8 +183,8 @@ int main(int argc, char** argv) {
 
 }
 
-cout<<"\n\n\n Voce perdeu!"<<endl;
-cout<<"\n O numero correto era: "<<a<<b<<c<<d<<e<<endl;
+cout<<sl[5]<<endl;
+cout<<sl[6]<<a<<b<<c<<d<<e<<endl;
 	
 	
 	
