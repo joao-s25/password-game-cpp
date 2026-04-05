@@ -1,9 +1,6 @@
-# arquivos compilados
+# arquivos
 *.o
 *.exe
-
-# arquivos de layout do Dev-C++
 *.layout
-
-# arquivos temporários
 *.log
+*.win

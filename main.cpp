@@ -21,6 +21,8 @@ int main(int argc, char** argv) {
 	vector<string> ptl;
 	vector<string> enl;
 	
+	//pt
+	
 	ptl.push_back("   Bem-vindo ao Jogo da Senha");
 	ptl.push_back("\n\n = Rodada ");
 	ptl.push_back("\n - Tente um numero (5 digitos) ");
@@ -30,6 +32,10 @@ int main(int argc, char** argv) {
 	ptl.push_back("\n O numero correto era: ");
 	ptl.push_back("\n | Numeros corretos: ");
 	ptl.push_back("\n | Numeros nos lugares corretos: ");
+	
+	
+	
+	//en
 	
 	enl.push_back("   Welcome to the Password Game");
 	enl.push_back("\n\n = Round ");
